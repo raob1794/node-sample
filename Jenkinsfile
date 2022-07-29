@@ -23,6 +23,11 @@ stages{
               sh 'docker ps -a'
     }
 }
+     stage('Docker Images') { 
+            steps {
+                sh 'docker rm -f $(docker ps -aq)'
+            }
+        }
       stage('docker Containers') { 
             steps {
                 sh 'docker run -d -p 3000:3000 --name ${containername} node-sample:${imageversion} '
