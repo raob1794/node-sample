@@ -18,6 +18,11 @@ stages{
                 sh 'docker images'
             }
         }
+    stage('list of exisitng continaer ') { 
+            steps {
+              sh 'docker ps -a'
+    }
+}
       stage('docker Containers') { 
             steps {
                 sh 'docker run -d -p 3000:3000 --name ${containername} node-sample:${imageversion} '
