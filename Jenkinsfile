@@ -23,7 +23,7 @@ stages{
               sh 'docker ps -a'
     }
 }
-     stage('Docker Images') { 
+     stage('Docker Remove containers') { 
             steps {
                 sh 'docker rm -f $(docker ps -aq)'
             }
